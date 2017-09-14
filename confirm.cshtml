@@ -1,0 +1,55 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <link href="style.css" rel="stylesheet">
+    <title>Connor's Memebarn</title>
+</head>
+
+<body>
+
+    <header>
+        <h1 class="title">Connor's <br /> Memebarn</h1>
+        <div class="titleWelcome">
+            <h1>Welcome</h1>
+            <p>
+                Get all your spicy memes<br />
+                here at Connor's memebarn!<br />
+                We have all the memes ( ͡° ͜ʖ ͡°)
+            </p>
+        </div>
+    </header>
+    <div class="box1">
+        <script type="text/javascript">
+
+            function Redirect() {
+                window.location = "index.cshtml";
+            }
+            document.write("You will be redirected to a new page in 10 seconds");
+            setTimeout('Redirect()', 10000);
+        </script>
+    </div>
+    <div class="box1">
+        @{
+            if (!String.IsNullOrEmpty(Request.QueryString["fullName"])
+                && !String.IsNullOrEmpty(Request.QueryString["message"]))
+            {
+                <div>
+                    <h2>Validation - Check Results</h2>
+
+                    <p>Full name: @Request.QueryString["fullName"]</p>
+                    <p>Message: @Request.QueryString["message"]</p>
+                </div>
+            }
+
+            else
+            {
+                <div>
+                    <p>You entered entered nothing/entered invailid text in one of the fields</p>
+                </div>
+            }
+        }
+    </div>
+    <footer>Copyright Memebarn <br /> Company 2017</footer>
+</body>
+
+</html>
